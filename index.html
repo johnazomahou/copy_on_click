@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+   
+    <div class="corps">
+        <div class="element_a_copier">
+            Je m'appelle john azomahou et je suis un développeur
+        </div>
+        <svg class="img-svg h-5 w-5"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"></path><path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"></path></svg>
+ 
+    </div>
+    <style>
+        .corps{
+            display: flex;
+            background-color:#292D3E;
+            width: 60%;
+            height: 100px;
+            border-radius: 15px;
+            justify-content: space-between;
+            font-size: 25px;
+            padding: 15px;
+            color: white;
+
+        }
+        .img-svg{
+           color: initial;
+           width: 40px;
+           position: relative;
+           top:-30px  
+        }
+        .img-svg:hover{
+            color: white;
+        }
+        
+
+
+    </style>
+    
+<script>
+    var element_a_copier=document.querySelector(".element_a_copier");
+    var img_svg=document.querySelector(".img-svg");
+    img_svg.onclick=()=>{
+
+        navigator.clipboard.writeText(element_a_copier.textContent).then(()=>{
+            console.log("copié");
+        }).catch(err=>{
+            console.log("Quelque chose s'est mal passé",err);
+        })
+    }
+</script>
+
+
+<!-- //
+// var img_svg=document.querySelector(".img-svg");
+// img_svg.onclick=()=>{
+//     navigator.clipboard.writeText(element_a_copier.textContent)
+//     .then(() => {
+//     console.log("Copié")
+// }) .catch(err => {
+//     console.log("Quelque chose s'est ma passé", err);
+// })
+// }    -->
+</body>
+</html>
